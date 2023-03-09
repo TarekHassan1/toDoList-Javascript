@@ -12,23 +12,26 @@ window.addEventListener("load",()=>{
 
 function renderItems() {
   toDoList.forEach((item) => {
-    const toDoItem = createGroceryElement(item);
+    const toDoItem = createToDoElement(item);
     toDos.appendChild(toDoItem);
   });
 }
 
-function createGroceryElement(item) {
+function createToDoElement(item) {
   const toDoItem = document.createElement("p");
   toDoItem.classList.add("toDoItem");
   toDoItem.textContent = item;
 
+
   const deleteBtn = createDeleteButton(item);
+
   const editBtn = createEditButton(toDoItem);
 
   toDoItem.append(deleteBtn, editBtn);
 
   return toDoItem;
 }
+
 
 function createDeleteButton(item) {
   const deleteBtn = document.createElement("i");
@@ -38,19 +41,26 @@ function createDeleteButton(item) {
     if (index > -1) {
       toDoList.splice(index, 1);
       localStorage.setItem("toDoList", JSON.stringify(toDoList));
-      deleteGroceryElement(item);
+      deleteToDoElement(item);
     }
   });
   return deleteBtn;
 }
 
-function deleteGroceryElement(item) {
-  const groceryElements = document.querySelectorAll('.grocery');
-  groceryElements.forEach((toDoItem) => {
+
+
+function deleteToDoElement(item) {
+  const toDoElements = document.querySelectorAll('.toDoItem');
+  toDoElements.forEach((toDoItem) => {
     if (toDoItem.textContent === item) {
       toDoItem.remove();
     }
   });
+const index=toDoElements.indexOf(item);
+if(index > -1){
+  toDoElements.splice(index,1);
+  localStorage.setItem("toDoElements",JSON.stringify(toDoElements));
+}
 }
 
 function createEditButton(toDoItem) {
@@ -70,7 +80,7 @@ function addInputBlur() {
     addBtn.onclick = () => {
       const inputValue = addInput.value;
       if (inputValue === "") {
-        alert("Please enter a grocery item!");
+        alert("Please enter an item!");
         return;
       }
 
