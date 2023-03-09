@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+section {
+  padding: 20px;
+  background-color: #D4AFCD;
+  margin-top: 60px;
+  border-radius: 20px;
+  width: 400px;
+  min-height: 300px;
+}
+section .toDo-Add {
+  margin-bottom: 40px;
+  display: flex;
+}
+section .toDo-Add input {
+  width: 95%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 2px solid #EEE;
+  padding: 10px;
+}
+section .toDo-Add input:focus {
+  outline: 0;
+  border: 2px solid #8f71ff;
+}
+section .toDo-Add button {
+  width: 60px;
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid #EEE;
+  cursor: pointer;
+}
+section .toDo-Add button:hover {
+  border: 2px solid #83A944;
+  opacity: 0.8;
+}
+section h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+}
+section .toDoList {
+  width: 100%;
+}
+section .toDoList .toDoItem {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+section .toDoList .toDoItem .delete, section .toDoList .toDoItem .edit {
+  font-weight: 900;
+  position: absolute;
+  cursor: pointer;
+  font-size: 20px;
+}
+section .toDoList .toDoItem .delete {
+  content: "\f1f8";
+  right: 20px;
+}
+section .toDoList .toDoItem .edit {
+  content: "\f044";
+  right: 45px;
+}/*# sourceMappingURL=style.css.map */
