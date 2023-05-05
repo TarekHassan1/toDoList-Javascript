@@ -59,6 +59,7 @@ section .toDoList .toDoItem {
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
+  word-break:break-word;
 }
 section .toDoList .toDoItem .delete, section .toDoList .toDoItem .edit {
   font-weight: 900;
